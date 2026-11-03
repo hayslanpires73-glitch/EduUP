@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduUP - Aprendizado de Idiomas</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/img/mascot.png">
+</head>
+<body>
+
+  <!-- Inclusão dos Ícones SVG Minimalistas Embutidos para compatibilidade total com Safari/file:// -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-xp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </symbol>
+    <symbol id="icon-path" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </symbol>
+    <symbol id="icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+      <path d="M4 22h16"/>
+      <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+      <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+    </symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+      <path d="M21 3v5h-5"/>
+      <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+      <path d="M8 16H3v5"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <div class="app-container">
+    
+    <!-- BARRA LATERAL (DESKTOP) -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <img src="assets/img/mascot.png" alt="Mascote EduUP" class="brand-mascot-thumb">
+        <span class="brand-title">EduUP</span>
+      </div>
+
+      <ul class="nav-menu">
+        <li>
+          <button class="nav-item-btn active" data-nav="path">
+            <svg class="icon icon-md"><use href="#icon-path"></use></svg>
+            <span>Aprender</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-nav="profile">
+            <svg class="icon icon-md"><use href="#icon-user"></use></svg>
+            <span>Perfil</span>
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="main-content">
+      
+      <!-- BARRA SUPERIOR (STATS) -->
+      <header class="topbar">
+        <div style="font-weight: 800; font-size: 16px; color: var(--color-primary); display: flex; align-items: center; gap: 8px;">
+          <img src="assets/img/mascot.png" alt="Mascote" style="width: 28px; height: 28px; border-radius: 6px;">
+          <span>Inglês</span>
+        </div>
+
+        <div class="topbar-stats">
+          <!-- Pílula de Ofensiva -->
+          <div class="stat-pill streak" title="Dias seguidos de ofensiva">
+            <svg class="icon icon-sm"><use href="#icon-flame"></use></svg>
+            <span id="stat-streak-val">1</span>
+          </div>
+
+          <!-- Pílula de XP -->
+          <div class="stat-pill xp" title="Pontos de Experiência">
+            <svg class="icon icon-sm"><use href="#icon-xp"></use></svg>
+            <span id="stat-xp-val">0</span>
+          </div>
+
+          <!-- Pílula de Vidas -->
+          <div class="stat-pill hearts" id="pill-hearts" title="Vidas restantes (clique para recarregar)">
+            <svg class="icon icon-sm"><use href="#icon-heart"></use></svg>
+            <span id="stat-hearts-val">5</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CORPO DE VISUALIZAÇÕES -->
+      <div class="content-body">
+        
+        <!-- VISUALIZAÇÃO: TRILHA DE APRENDIZADO -->
+        <div class="path-column" id="view-path">
+          <div id="roadmap-units-list">
+            <!-- Unidades e nós da trilha gerados dinamicamente via JS -->
+          </div>
+        </div>
+
+        <!-- COLUNA LATERAL DE APOIO (DESKTOP) -->
+        <aside class="side-column">
+          <!-- Card do Mascote -->
+          <div class="side-card side-mascot-card">
+            <img src="assets/img/mascot.png" alt="Mascote Roxinho" class="side-mascot-img">
+            <div class="side-mascot-text">
+              "Estudar 10 minutos por dia constrói fluência duradoura."
+            </div>
+            <button class="btn btn-secondary" style="width: 100%;" onclick="window.app.switchView('profile')">
+              Ver Estatísticas
+            </button>
+          </div>
+
+          <!-- Card de Meta Diária -->
+          <div class="side-card">
+            <div class="side-card-title">
+              <span>Meta Diária</span>
+              <svg class="icon icon-sm" style="color: var(--color-primary);"><use href="#icon-trophy"></use></svg>
+            </div>
+            <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 12px;">
+              Complete lições para manter sua chama de ofensiva ativa.
+            </p>
+            <div style="background: var(--color-border); height: 8px; border-radius: 4px; overflow: hidden;">
+              <div style="background: var(--color-primary); width: 65%; height: 100%;"></div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- VISUALIZAÇÃO: PERFIL DO USUÁRIO -->
+        <div class="profile-view" id="view-profile" style="display: none;">
+          <div class="profile-header-card">
+            <img src="assets/img/mascot.png" alt="Foto de Perfil" class="profile-avatar-large">
+            <div>
+              <h1 class="profile-info-name" id="profile-display-name">Estudante Roxo</h1>
+              <p class="profile-info-email" id="profile-display-email">estudante@eduup.com</p>
+            </div>
+          </div>
+
+          <!-- Estatísticas -->
+          <div class="profile-stats-grid">
+            <div class="stat-box">
+              <svg class="icon icon-lg" style="color: #D97706;"><use href="#icon-flame"></use></svg>
+              <div>
+                <div class="stat-box-val" id="prof-stat-streak">1</div>
+                <div class="stat-box-lbl">Dias de Ofensiva</div>
+              </div>
+            </div>
+
+            <div class="stat-box">
+              <svg class="icon icon-lg" style="color: var(--color-primary);"><use href="#icon-xp"></use></svg>
+              <div>
+                <div class="stat-box-val" id="prof-stat-xp">0</div>
+                <div class="stat-box-lbl">Total de XP</div>
+              </div>
+            </div>
+
+            <div class="stat-box">
+              <svg class="icon icon-lg" style="color: #059669;"><use href="#icon-check"></use></svg>
+              <div>
+                <div class="stat-box-val" id="prof-stat-completed">0</div>
+                <div class="stat-box-lbl">Lições Concluídas</div>
+              </div>
+            </div>
+
+            <div class="stat-box">
+              <svg class="icon icon-lg" style="color: #DC2626;"><use href="#icon-heart"></use></svg>
+              <div>
+                <div class="stat-box-val" id="prof-stat-hearts">5 / 5</div>
+                <div class="stat-box-lbl">Vidas Disponíveis</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seletor de Humor do Mascote -->
+          <div class="side-card">
+            <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 6px;">Escolha o Humor do seu Mascote</h3>
+            <p style="font-size: 13px; color: var(--color-text-muted); margin-bottom: 12px;">Selecione o sprite que melhor representa sua jornada de estudos no EduUP:</p>
+            <div class="mascot-sprites-grid" id="mascot-sprites-picker">
+              <div class="mascot-sprite-option active" data-sprite="mascot_happy.png" title="Animado & Pronto para Estudar">
+                <img src="assets/img/mascot_happy.png" alt="Mascote Feliz" class="mascot-sprite-thumb">
+                <span class="mascot-sprite-title">Feliz</span>
+              </div>
+              <div class="mascot-sprite-option" data-sprite="mascot_confident.png" title="Confiante e Focado">
+                <img src="assets/img/mascot_confident.png" alt="Mascote Confiante" class="mascot-sprite-thumb">
+                <span class="mascot-sprite-title">Confiante</span>
+              </div>
+              <div class="mascot-sprite-option" data-sprite="mascot_angry.png" title="Cobrança no Estilo Duolingo">
+                <img src="assets/img/mascot_angry.png" alt="Mascote Exigente" class="mascot-sprite-thumb">
+                <span class="mascot-sprite-title">Cobrança</span>
+              </div>
+              <div class="mascot-sprite-option" data-sprite="mascot_sad.png" title="Sensível e Carente de Vidas">
+                <img src="assets/img/mascot_sad.png" alt="Mascote Sensível" class="mascot-sprite-thumb">
+                <span class="mascot-sprite-title">Chorando</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Configurações de Perfil -->
+          <div class="side-card">
+            <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 16px;">Configurações da Conta</h3>
+            <div style="margin-bottom: 16px;">
+              <label for="input-profile-name" style="display: block; font-size: 13px; font-weight: 700; color: var(--color-text-muted); margin-bottom: 6px;">
+                Nome do Aprendiz
+              </label>
+              <input type="text" id="input-profile-name" value="Estudante Roxo" style="width: 100%; padding: 10px 14px; border: 2px solid var(--color-border); border-radius: var(--radius-md); font-size: 15px; font-weight: 600; outline: none;">
+            </div>
+            <div style="display: flex; gap: 12px;">
+              <button class="btn btn-primary" id="btn-save-name">Salvar Alterações</button>
+              <button class="btn btn-white" id="btn-reset-progress">
+                <svg class="icon icon-sm"><use href="#icon-refresh"></use></svg>
+                <span>Reiniciar Progresso</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- NAVEGAÇÃO INFERIOR (MOBILE) -->
+  <nav class="mobile-nav">
+    <button class="mobile-nav-btn active" data-nav="path">
+      <svg class="icon icon-md"><use href="#icon-path"></use></svg>
+      <span>Trilha</span>
+    </button>
+    <button class="mobile-nav-btn" data-nav="profile">
+      <svg class="icon icon-md"><use href="#icon-user"></use></svg>
+      <span>Perfil</span>
+    </button>
+  </nav>
+
+  <!-- TELA DE LIÇÃO / QUIZ INTERATIVO (OVERLAY EM TELA CHEIA) -->
+  <div class="lesson-screen" id="lesson-screen" style="display: none;">
+    <header class="lesson-topbar">
+      <button class="lesson-exit-btn" id="lesson-exit-btn" title="Fechar Lição" aria-label="Fechar Lição">
+        <svg class="icon icon-lg"><use href="#icon-close"></use></svg>
+      </button>
+
+      <div class="lesson-progress-container">
+        <div class="lesson-progress-bar" id="lesson-progress-bar"></div>
+      </div>
+
+      <div class="lesson-hearts-badge">
+        <svg class="icon icon-md"><use href="#icon-heart"></use></svg>
+        <span id="lesson-hearts-count">5</span>
+      </div>
+    </header>
+
+    <div class="lesson-body" id="lesson-body">
+      <!-- Questão renderizada via JS -->
+    </div>
+
+    <footer class="lesson-footer" id="lesson-footer">
+      <div class="lesson-footer-inner">
+        <div class="feedback-info" id="feedback-info">
+          <!-- Ícone e mensagem de acerto/erro aparecem aqui -->
+        </div>
+        <button class="btn btn-primary" id="lesson-check-btn" disabled>
+          Verificar
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/audio.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/lesson-engine.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
